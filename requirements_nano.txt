@@ -1,1 +1,5 @@
 
+pycuda>=2022.1
+numpy>=1.21.0
+opencv-python>=4.5.0
+pyyaml>=6.0

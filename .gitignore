@@ -1,0 +1,13 @@
+*.jpg
+*.png
+*.mp4
+*.pth
+*.pt
+*.onnx
+*.trt
+dataset/
+runs/
+__pycache__/
+*.pyc
+venv/
+.env
