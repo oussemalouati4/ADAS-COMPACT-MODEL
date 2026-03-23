@@ -1,0 +1,59 @@
+# ADAS Compact Model — Jetson Nano 4GB
+
+Real-time 5-task ADAS system running at ~25 FPS on Jetson Nano 4GB.
+One single model handles everything in one forward pass.
+
+---
+
+## Tasks
+| Task | Model Head | Dataset |
+|------|-----------|---------|
+| Object detection | Detection head | BDD100K |
+| Lane detection | Lane head | CULane |
+| Drivable area | Segmentation head | BDD100K + Cityscapes |
+| Traffic signs | Sign head | Mapillary Signs |
+| Traffic lights | Light head | BOSCH Lights |
+
+---
+
+## Architecture
+- Backbone : EfficientNet-B2 (shared by all tasks)
+- Neck     : BiFPN (multi-scale feature fusion)
+- Heads    : 5 task-specific heads
+- Runtime  : TensorRT INT8 on Jetson Nano
+
+---
+
+## Performance on Jetson Nano
+| Metric | Value |
+|--------|-------|
+| FPS | ~25 |
+| Latency | ~38ms |
+| GPU memory | ~2.2 GB |
+| Model size | ~50 MB (.trt) |
+
+---
+
+## How to use
+
+### 1 — Train (PC or Google Colab)
+pip install -r requirements.txt
+python data/convert.py
+python training/train.py
+
+### 2 — Export
+python export/export_onnx.py
+bash export/build_trt.sh        # run this ON the Nano
+
+### 3 — Run on Jetson Nano
+bash deploy/setup_nano.sh
+python deploy/inference.py --source /dev/video0
+
+---
+
+## Project structure
+data/       — dataset download and conversion
+models/     — backbone, neck, heads, losses
+training/   — training loop and config
+export/     — ONNX and TensorRT conversion
+deploy/     — Jetson Nano inference pipeline
