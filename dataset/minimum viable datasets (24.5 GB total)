@@ -1,0 +1,15 @@
+
+# BDD100K — covers objects + lanes + drivable + lights
+→ https://bdd-data.berkeley.edu  (register, then download images + labels)
+
+# CULane — best lane dataset
+→ https://xingangpan.github.io/projects/CULane.html
+
+# Mapillary Traffic Sign Dataset
+→ https://www.mapillary.com/dataset/trafficsign  (register free)
+
+# BOSCH Small Traffic Lights
+→ https://hci.iwr.uni-heidelberg.de/content/bosch-small-traffic-lights-dataset
+
+# GTSRB — traffic sign classification (tiny, 300 MB)
+→ https://benchmark.ini.rub.de/gtsrb_dataset.html
