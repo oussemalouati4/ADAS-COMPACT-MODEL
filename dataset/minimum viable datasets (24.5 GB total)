@@ -1,15 +1,15 @@
+**********BDD100K 6.5 GB**********
+100,000 driving images
+✅ Object detection (cars, people, bikes, trucks)
+✅ Lane line annotations
+✅ Drivable area masks
+✅ Traffic light states (red/green/yellow)
+⚠️ Traffic signs — detection only, no class
 
-# BDD100K — covers objects + lanes + drivable + lights
-→ https://bdd-data.berkeley.edu  (register, then download images + labels)
+**********GTSRB 300 MB************
+51,839 cropped sign images
+✅ 43 sign classes (stop, speed, yield...)
+✅ Classification labels
+❌ No full scene — patches only
 
-# CULane — best lane dataset
-→ https://xingangpan.github.io/projects/CULane.html
-
-# Mapillary Traffic Sign Dataset
-→ https://www.mapillary.com/dataset/trafficsign  (register free)
-
-# BOSCH Small Traffic Lights
-→ https://hci.iwr.uni-heidelberg.de/content/bosch-small-traffic-lights-dataset
-
-# GTSRB — traffic sign classification (tiny, 300 MB)
-→ https://benchmark.ini.rub.de/gtsrb_dataset.html
+Strategy: use it to train sign classifier head on top of BDD100K detections
