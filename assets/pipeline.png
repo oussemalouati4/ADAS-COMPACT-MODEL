@@ -1,1 +1,5 @@
-
+Detect objects (YOLO / detector)
+Detect traffic signs
+Crop sign regions
+Classify signs (GTSRB classifier)
+Post-process results
